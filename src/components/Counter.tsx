@@ -1,0 +1,14 @@
+import { useState } from 'react';
+
+export const Counter: React.FC = () => {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>增加</button>
+            <button onClick={() => setCount(count - 1)}>減少</button>
+            <button onClick={() => setCount(0)}>重置</button>
+        </div>
+    );
+};
