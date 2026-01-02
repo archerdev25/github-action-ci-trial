@@ -12,7 +12,7 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
       reportsDirectory: './coverage',
-      exclude: ['**/test-utils/**', '**/vitest.setup.ts'],
+      exclude: ['**/test-utils/**', '**/vitest.setup.ts','./src/App.tsx','./src/main.tsx','./public/mockServiceWorker.js','./vite.config.ts','./eslint.config.js','./src/mocks/browser.ts'],
     },
   },
 })
