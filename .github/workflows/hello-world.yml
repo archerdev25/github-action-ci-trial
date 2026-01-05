@@ -1,0 +1,14 @@
+name: Check Actions Work
+
+# 觸發條件：當你 push 任何東西到分支時
+on: [push]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Say Hello
+        run: echo "GitHub Actions 正在運作中！"
+
+      - name: Step 2 - Show Date
+        run: date
