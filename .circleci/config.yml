@@ -1,0 +1,24 @@
+version: 2.1
+
+# 引用 Orbs (類似 GitHub 的 Actions)，這裡使用 Node.js 官方模組
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  unit-test:
+    # 指定執行環境
+    docker:
+      - image: cimg/node:18.0.0
+    steps:
+      - checkout # 複製程式碼
+      - node/install-packages: # 自動安裝 dependencies 並處理 cache
+          pkg-manager: npm
+      - run:
+          name: Run Vitest
+          command: npm run test -- --run
+
+# 定義工作流順序
+workflows:
+  test-workflow:
+    jobs:
+      - unit-test
