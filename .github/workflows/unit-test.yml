@@ -1,12 +1,16 @@
 name: PR Unit Tests
 
+# on:
+#   pull_request:
+#     branches: [main, develop]
+
 on:
-  pull_request:
-    branches: [main, develop]
+  push:
+    branches: develop
 
 jobs:
   unit-tests:
-    runs-on: ubuntu-latest
+    runs-on: linux-latest
 
     steps:
       - name: Checkout
@@ -15,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24.12.0
+          node-version: 2
           cache: npm # change to pnpm/yarn if needed
 
       - name: Install dependencies
