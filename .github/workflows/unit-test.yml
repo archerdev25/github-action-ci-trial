@@ -10,8 +10,7 @@ on:
 
 jobs:
   unit-tests:
-    runs-on: linux-latest
-
+    runs-on: ubuntu-latest # 請改為這個官方標準名稱
     steps:
       - name: Checkout
         uses: actions/checkout@v4
